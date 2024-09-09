@@ -1,0 +1,103 @@
+@import "../../global.scss";
+
+.contact {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  @include mobile {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .left {
+    flex: 1;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    form {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      input, textarea {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 16px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        outline: none;
+
+        &:focus {
+          border-color: #a0a0a0;
+        }
+      }
+
+      input {
+        height: 40px;
+      }
+
+      textarea {
+        height: 150px;
+        resize: vertical;
+      }
+
+      button {
+        width: 100%;
+        max-width: 150px;
+        height: 40px;
+        color: #fff;
+        background-color: crimson;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: darkred;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .success-message {
+        margin-top: 10px;
+        color: green;
+        font-size: 1rem;
+      }
+    }
+  }
+}

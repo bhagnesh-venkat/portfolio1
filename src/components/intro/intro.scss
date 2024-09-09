@@ -1,0 +1,115 @@
+@import "../../global.scss";
+
+.intro {
+  background-color: #f0f0f0; // Example background color
+  display: flex;
+  position: relative;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left {
+    flex: 0.5;
+    overflow: hidden;
+
+    .imgContainer {
+      width: 70%; // Adjusted for better responsiveness
+      max-width: 500px; // Limit max width
+      height: auto; // Maintain aspect ratio
+      background-color: crimson;
+      border-radius: 50%;
+      display: flex;
+      align-items: center; // Center the image vertically
+      justify-content: center; // Center the image horizontally
+      margin-right: 20px; // Margin for spacing
+
+      @include mobile {
+        margin-right: 0; // Remove margin on mobile
+        margin-bottom: 20px; // Add margin at the bottom
+      }
+
+      img {
+        width: 90%; // Adjust width for better fit
+        height: auto; // Maintain aspect ratio
+
+        @include mobile {
+          width: 80%; // Adjust width on mobile
+        }
+      }
+    }
+  }
+
+  .right {
+    flex: 0.5;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include mobile {
+        padding-left: 0;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 50px;
+        margin: 10px 0;
+
+        @include mobile {
+          font-size: 40px;
+        }
+      }
+
+      h2 {
+        font-size: 35px;
+      }
+
+      span {
+        font-size: 30px;
+        color: crimson;
+      }
+
+      .ityped-cursor {
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+
+    .down-arrow {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      img {
+        width: 30px;
+        animation: arrowBlink 2s infinite;
+      }
+
+      @keyframes arrowBlink {
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
